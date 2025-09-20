@@ -1,112 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RESPECT REZ Societe</title>
-<style>
-/* Global Styles */
-body {margin:0; font-family:'Segoe UI', sans-serif; background:#0a0a0a; color:#fff;}
-a {color:#0ff; text-decoration:none;}
-header {background:linear-gradient(135deg,#0ff,#f0f); padding:20px; text-align:center; box-shadow:0 0 20px #0ff;}
-header h1 {margin:0; font-size:2.5rem; text-shadow:0 0 20px #f0f,0 0 40px #0ff;}
-nav {display:flex; justify-content:center; gap:30px; margin-top:15px;}
-nav a {font-weight:bold; text-transform:uppercase; transition:0.3s;}
-nav a:hover {color:#f0f;}
-section {padding:60px 20px; max-width:1200px; margin:auto;}
-section h2 {text-align:center; font-size:2rem; margin-bottom:30px; color:#0ff; text-shadow:0 0 15px #f0f,0 0 30px #0ff;}
-.card {background:rgba(0,0,0,0.8); padding:20px; margin:15px; border-radius:15px; box-shadow:0 0 30px #0ff,0 0 60px #f0f; transition:0.3s;}
-.card:hover {transform:scale(1.05); box-shadow:0 0 50px #f0f,0 0 80px #0ff;}
-.grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
-button {padding:10px 20px; border:none; border-radius:5px; background:#0ff; color:#000; font-weight:bold; cursor:pointer; transition:0.3s;}
-button:hover {background:#00aa99; color:#fff; box-shadow:0 0 20px #0ff,0 0 30px #f0f;}
-footer {background:#111; padding:30px; text-align:center; border-top:2px solid #0ff;}
-footer p {margin:5px 0;}
-
-/* Update Popup */
-#update-popup {position:fixed;top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); display:flex; justify-content:center; align-items:center; z-index:9999;}
-.update-content {background:linear-gradient(135deg,#0ff,#f0f); padding:40px; border-radius:15px; text-align:center; color:#fff; max-width:500px; box-shadow:0 0 50px #0ff,0 0 80px #f0f inset; animation:glowAnim 2s ease-in-out infinite alternate;}
-.update-logo {font-size:2rem; font-weight:bold; margin-bottom:15px; text-shadow:0 0 20px #0ff,0 0 40px #f0f; animation:neonPulse 1.5s ease-in-out infinite alternate;}
-.progress-bar {width:100%; height:20px; background:rgba(255,255,255,0.2); border-radius:10px; margin-bottom:20px; overflow:hidden;}
-#progress-fill {width:0%; height:100%; background:linear-gradient(90deg,#0ff,#f0f); border-radius:10px; animation:fillProgress 5s forwards;}
-@keyframes glowAnim {0%{box-shadow:0 0 30px #0ff,0 0 50px #f0f inset;}50%{box-shadow:0 0 50px #0ff,0 0 80px #f0f inset;}100%{box-shadow:0 0 30px #0ff,0 0 50px #f0f inset;}}
-@keyframes neonPulse {0%{text-shadow:0 0 10px #0ff,0 0 20px #f0f;}50%{text-shadow:0 0 25px #0ff,0 0 40px #f0f;}100%{text-shadow:0 0 15px #0ff,0 0 30px #f0f;}}
-@keyframes fillProgress {from{width:0%;}to{width:100%;}}
-</style>
+  <meta charset="UTF-8">
+  <title>RESPECT REZ - Upgrade Notice</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0a0a0a;
+      color: white;
+      text-align: center;
+    }
+    .update-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(90deg, #ff0000, #ff7300, #fffb00);
+      color: black;
+      font-weight: bold;
+      padding: 20px;
+      z-index: 9999;
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      from { box-shadow: 0 0 10px #ff0000; }
+      to { box-shadow: 0 0 25px #ff7300; }
+    }
+    .countdown {
+      font-size: 22px;
+      margin-top: 10px;
+      color: #111;
+    }
+  </style>
 </head>
 <body>
-
-<header>
-  <h1>💎 RESPECT REZ 💎</h1>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#market">REZ Market</a>
-    <a href="#dashboards">Dashboards</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<section id="home">
-  <h2>Welcome to RESPECT REZ</h2>
-  <p>Founded: June 13, 2024 | Major Update: April 26, 2025 | Last Update: September 25, 2025</p>
-  <p>Owner: WAEL.REZ | Co-Owner: Samy.REZ</p>
-  <p>Our mission: Build top-tier security apps & gaming solutions with over 2500 developers worldwide.</p>
-  <p>Additional Info: We run global cyber security operations, host online workshops, develop premium gaming experiences, and collaborate with tech innovators worldwide. Our annual conferences bring together thousands of developers, hackers, and security enthusiasts.</p>
-  <p>Global Presence: Offices and remote teams across Morocco, Europe, North America, and the Middle East. We actively support community-driven security projects and open-source contributions.</p>
-</section>
-
-<section id="about">
-  <h2>About REZ Security</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>REZ Security App v1</h3>
-      <p>Detects all PC & Mobile viruses via IP and hacker location detection. Used globally by security experts.</p>
-    </div>
-    <div class="card">
-      <h3>Cyber Security Team</h3>
-      <p>Red Team & Blue Team trained to secure networks worldwide and conduct ethical hacking training.</p>
-    </div>
-    <div class="card">
-      <h3>REZ Market</h3>
-      <p>Global websites for purchase with secure payments and delivery. Supports multiple payment methods.</p>
-    </div>
-    <div class="card">
-      <h3>Research & Development</h3>
-      <p>Continuous innovation in AI-based security, penetration testing tools, and gaming integration systems.</p>
-    </div>
-    <div class="card">
-      <h3>Community Programs</h3>
-      <p>Training, workshops, and mentorship programs to nurture new talent in cybersecurity and web development.</p>
-    </div>
+  <div class="update-banner">
+    🚨 RESPECT REZ Administration Upgrade 🚨 <br>
+    Update will complete on <b>2025/09/21 – 00:01</b>
+    <div class="countdown" id="countdown"></div>
   </div>
-</section>
 
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="grid">
-    <div class="card"><h3>Gaming Dashboard</h3><p>Neon Gaming style dashboard with order tracking and REZ GAMING market.</p></div>
-    <div class="card"><h3>Cyber Dashboard</h3><p>Kali Linux installation, full security tutorials, admin staff monitoring orders.</p></div>
-    <div class="card"><h3>REZ Community</h3><p>Join our global team to collaborate on new projects, apps, and security solutions.</p></div>
-    <div class="card"><h3>Consultancy</h3><p>Professional consultancy services for businesses, governments, and non-profits in security and IT strategy.</p></div>
-  </div>
-</section>
+  <script>
+    // Countdown timer
+    const targetDate = new Date("Sep 21, 2025 00:01:00").getTime();
+    const countdownEl = document.getElementById("countdown");
 
-<section id="market">
-  <h2>REZ Market</h2>
-  <div class="grid">
-    <div class="card"><h3>Website Package 1</h3><p>Price: $500</p></div>
-    <div class="card"><h3>Website Package 2</h3><p>Price: $1200</p></div>
-    <div class="card"><h3>Website Package 3</h3><p>Price: $2500</p></div>
-    <div class="card"><h3>Website Package 4</h3><p>Price: $4000</p></div>
-    <div class="card"><h3>Website Package 5</h3><p>Price: $7000 - Premium Enterprise Solutions</p></div>
-  </div>
-</section>
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
 
-<section id="dashboards">
-  <h2>Dashboards</h2>
-  <div class="grid">
-    <div class="card"><h3>Admin Staff</h3><p>Login to monitor all orders and donations with full permissions.</p></div>
-    <div class="card"><h3>Gaming Dashboard</h3><p>Track orders, REZ Market items, purchase history with Neon style.</p></div>
-    <div class="card"><h3>Cyber Dashboard</h3><p>Learn security, install Kali Linux, monitor threats
+      if (distance > 0) {
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownEl.innerHTML = 
+          `⏳ ${days}d ${hours}h ${minutes}m ${seconds}s left`;
+      } else {
+        countdownEl.innerHTML = "✅ Upgrade Completed!";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
