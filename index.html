@@ -2,176 +2,270 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>RESPECT REZ - Gaming & Cyber Security</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RESPECT REZ.ORG</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #050505, #1a1a2e);
-      color: #e0e0e0;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
       overflow-x: hidden;
     }
+
+    /* Header & Menu */
     header {
-      text-align: center;
-      padding: 60px 20px;
-      background: #0d0d0d;
-      border-bottom: 3px solid #0ff;
-      animation: fadeIn 2s ease-in-out;
+      background: rgba(0,0,0,0.85);
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 2px solid #0ff;
+      backdrop-filter: blur(5px);
     }
-    header h1 {
-      font-size: 3.5em;
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
       color: #0ff;
-      text-shadow: 0 0 15px #0ff, 0 0 30px #00f, 0 0 45px #0ff;
-      animation: neonGlow 2s infinite alternate;
+      text-shadow: 0 0 15px #0ff, 0 0 20px #f0f;
+      letter-spacing: 2px;
+      animation: glow 2s ease-in-out infinite alternate;
     }
-    header p {
-      font-size: 1.3em;
-      color: #aaa;
-      margin-top: 10px;
-    }
-    section {
-      padding: 50px 20px;
-      max-width: 1100px;
-      margin: auto;
-      animation: fadeInUp 1.5s ease-in-out;
-    }
-    h2 {
-      color: #0ff;
-      border-left: 6px solid #0ff;
-      padding-left: 12px;
-      margin-bottom: 25px;
-      text-shadow: 0 0 10px #0ff;
-    }
-    .card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid #333;
-      border-radius: 12px;
-      padding: 25px;
-      margin-bottom: 25px;
-      box-shadow: 0 0 15px rgba(0,255,255,0.25);
-      transition: transform 0.3s;
-    }
-    .card:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 25px rgba(0,255,255,0.4);
-    }
-    footer {
-      background: #0d0d0d;
-      text-align: center;
-      padding: 25px;
-      font-size: 0.9em;
-      border-top: 3px solid #0ff;
-      margin-top: 40px;
-    }
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    nav ul {
+      list-style: none;
+      display: flex;
       gap: 25px;
     }
-    .stat-box {
-      background: rgba(255,255,255,0.08);
-      padding: 25px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(0,255,255,0.25);
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
       transition: 0.3s;
     }
-    .stat-box:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px rgba(0,255,255,0.5);
-    }
-    .stat-box h3 {
-      margin: 10px 0;
+    nav ul li a:hover {
       color: #0ff;
-      font-size: 1.8em;
+      text-shadow: 0 0 15px #0ff;
     }
-    .update {
-      background: rgba(255,255,255,0.05);
-      border-left: 6px solid #ff0;
-      padding: 20px;
-      margin: 25px 0;
+
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      text-align: center;
+      animation: fadeIn 1s ease-in;
+      border-radius: 15px;
+      margin: 20px auto;
+      max-width: 1200px;
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+    }
+    section:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 50px #0ff, 0 0 70px #f0f inset;
+    }
+
+    /* Gradient Sections */
+    #home {background: linear-gradient(120deg,#0ff,#f0f,#0ff);}
+    #about {background: linear-gradient(120deg,#ff005a,#ff8300);}
+    #services {background: linear-gradient(120deg,#00f7ff,#0ff,#00ffb8);}
+    #developers {background: linear-gradient(120deg,#8e2de2,#4a00e0);}
+    #buy {background: linear-gradient(120deg,#ff416c,#ff4b2b);}
+    #team {background: linear-gradient(120deg,#0ff,#f0f,#0ff);}
+    #projects {background: linear-gradient(120deg,#1f4037,#99f2c8);}
+    #contact {background: linear-gradient(120deg,#ff0080,#7928ca);}
+
+    section h2 {
+      font-size: 2.8rem;
+      color: #fff;
+      text-shadow: 0 0 20px #0ff, 0 0 30px #f0f;
+      margin-bottom: 20px;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    section p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    /* Cards */
+    .services, .developers, .team {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-top: 30px;
+    }
+    .card {
+      background: rgba(0,0,0,0.85);
+      border: 1px solid #0ff;
+      padding: 25px;
+      width: 270px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #0ff, 0 0 30px #f0f inset;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .card:hover {
+      transform: translateY(-15px) scale(1.05);
+      box-shadow: 0 0 40px #0ff, 0 0 60px #f0f inset, 0 0 20px #fff;
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #0ff;
+      font-size: 1.5rem;
+      text-shadow: 0 0 10px #0ff, 0 0 15px #f0f;
+      transition: 0.4s;
+    }
+    .card:hover h3 {
+      text-shadow: 0 0 25px #0ff, 0 0 35px #f0f, 0 0 50px #fff;
+    }
+
+    /* Form */
+    form {
+      max-width: 450px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    input, textarea, button {
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    input, textarea {
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      border: 1px solid #0ff;
+      transition: 0.3s;
+    }
+    input:focus, textarea:focus {
+      border-color: #f0f;
+      box-shadow: 0 0 10px #0ff;
+      outline: none;
+    }
+    button {
+      background: #0ff;
+      color: #000;
       font-weight: bold;
-      animation: pulse 2s infinite;
+      cursor: pointer;
+      transition: 0.3s;
     }
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
+    button:hover {
+      background: #00aa99;
+      color: #fff;
+      box-shadow: 0 0 15px #0ff, 0 0 25px #f0f;
     }
-    @keyframes fadeInUp {
-      from {opacity: 0; transform: translateY(40px);}
-      to {opacity: 1; transform: translateY(0);}
+
+    /* Footer */
+    footer {
+      background: rgba(0,0,0,0.85);
+      padding: 25px;
+      text-align: center;
+      border-top: 2px solid #0ff;
+      margin-top: 40px;
     }
-    @keyframes neonGlow {
-      from { text-shadow: 0 0 15px #0ff, 0 0 30px #00f; }
-      to { text-shadow: 0 0 25px #0ff, 0 0 45px #0ff, 0 0 65px #00f; }
-    }
-    @keyframes pulse {
-      0% {background: rgba(255,255,0,0.1);}
-      50% {background: rgba(255,255,0,0.3);}
-      100% {background: rgba(255,255,0,0.1);}
+    footer p {margin:5px 0;}
+
+    /* Animations */
+    @keyframes fadeIn {from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);}}
+    @keyframes glow {
+      0% {text-shadow:0 0 5px #0ff,0 0 10px #f0f;}
+      50% {text-shadow:0 0 20px #0ff,0 0 30px #f0f;}
+      100% {text-shadow:0 0 10px #0ff,0 0 15px #f0f;}
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>RESPECT REZ.ORG</h1>
-    <p>Gaming & Cyber Security Organization</p>
+    <nav>
+      <div class="logo">RESPECT REZ</div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#developers">Developers</a></li>
+        <li><a href="#buy">Buy</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section>
+  <section id="home">
+    <h1 class="neon">Welcome to RESPECT REZ</h1>
+    <p>Gaming & Cyber Security Company. We create Role Play games, professional websites, and high-tech security apps worldwide.</p>
+  </section>
+
+  <section id="about">
     <h2>About Us</h2>
-    <div class="card">
-      <p><b>Owner:</b> Wael.REZ</p>
-      <p><b>Co-Owner:</b> Samy.REZ</p>
-      <p>Founded officially in 2024, RESPECT REZ.ORG is an international organization focusing on Gaming, Cyber Security, and Advanced Technologies. With branches in Europe and Morocco, our mission is to innovate, secure, and build digital communities.</p>
-      <p>We collaborate with top global Cyber Security companies, and host annual E-Sports competitions, security conferences, and advanced developer programs.</p>
-    </div>
+    <p>Founded in <strong>2024</strong> in <strong>Siyana</strong>, RESPECT REZ is led by <strong>WAEL REZ</strong> (14 years old) and co-owner <strong>Samy REZ</strong>.  
+    On April 20, 2025, we completed a major update expanding services and growing our global developer team.</p>
+  </section>
 
-    <h2>Our Projects</h2>
-    <div class="card">
-      <ul>
-        <li><b>REZ Security App</b> – Advanced tool detecting payloads & preventing zero-day attacks.</li>
-        <li><b>Gaming Hub</b> – A global online competitive platform connecting thousands of gamers.</li>
-        <li><b>Cyber Education</b> – Workshops, online courses, and mentoring for 15,000+ developers.</li>
-        <li><b>Research & Development (R&D)</b> – Creating AI-driven cyber defense systems.</li>
-        <li><b>Internal Systems</b> – Secure staff tools, moderators dashboard, and admin frameworks.</li>
-      </ul>
-    </div>
-
-    <h2>Statistics 2024 - 2025</h2>
-    <div class="stats">
-      <div class="stat-box">
-        <h3>$39,520,000+</h3>
-        <p>Revenue Generated</p>
-      </div>
-      <div class="stat-box">
-        <h3>15,000+</h3>
-        <p>Active Developers & Members</p>
-      </div>
-      <div class="stat-box">
-        <h3>50+</h3>
-        <p>Projects Completed</p>
-      </div>
-      <div class="stat-box">
-        <h3>5+</h3>
-        <p>Global Partnerships</p>
-      </div>
-      <div class="stat-box">
-        <h3>20+</h3>
-        <p>Admins & Moderators</p>
-      </div>
-    </div>
-
-    <h2>Update Notice</h2>
-    <div class="update">
-      ⚠️ Website administration panel is locked. Commands remain blocked.  
-      A major update to our marketplace & management system is under development. Stay tuned!
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="card"><h3>Role Play Games</h3><p>Immersive games for PC & mobile.</p></div>
+      <div class="card"><h3>Website Development</h3><p>Professional gaming-style websites.</p></div>
+      <div class="card"><h3>Cyber Security App</h3><p>Detects viruses, payloads, and malware in real-time.</p></div>
+      <div class="card"><h3>Custom Projects</h3><p>Unique solutions tailored to your needs.</p></div>
     </div>
   </section>
 
+  <section id="developers">
+    <h2>Our Developers</h2>
+    <p>Over <strong>2,500 developers</strong> worldwide creating games, websites, and cyber security projects.</p>
+  </section>
+
+  <section id="buy">
+    <h2>Order Services</h2>
+    <form>
+      <input type="text" placeholder="First Name" required>
+      <input type="text" placeholder="Last Name" required>
+      <input type="text" placeholder="Website/Game Name" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <input type="text" placeholder="Payment Method" required>
+      <textarea placeholder="Additional Notes"></textarea>
+      <button type="submit">Submit Order</button>
+    </form>
+  </section>
+
+  <section id="team">
+    <h2>Our Team</h2>
+    <div class="team">
+      <div class="card"><h3>WAEL REZ</h3><p>Founder & Owner (14, Morocco)</p></div>
+      <div class="card"><h3>Samy REZ</h3><p>Co-Owner & Lead Developer</p></div>
+      <div class="card"><h3>2,500+ Developers</h3><p>Global team building websites, games & security apps.</p></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Our Flagship Project</h2>
+    <p>RESPECT REZ developed its most famous application: a high-tech cyber security app that detects payloads, viruses, and malware in real-time.  
+    This app is currently <strong>locked</strong> due to a major ongoing update to enhance its security and performance.  
+    The app ensures top-notch protection for users worldwide, representing our commitment to cyber security excellence.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: respectrezsociete@gmail.com</p>
+    <p>Phone: +212-600-000000</p>
+    <p>Address: Rabat, Morocco</p>
+  </section>
+
   <footer>
-    <p>© 2024 - 2025 RESPECT REZ.ORG | All rights reserved.</p>
+    <p>© 2025 RESPECT REZ - All Rights Reserved</p>
+    <p>Weekly Revenue: ~12,000$</p>
+    <p>All profits are donated to <strong>Gaza</strong></p>
+    <p>Founded: 2024 | Major Update: April 20, 2025 | Co-Owner: Samy REZ</p>
   </footer>
 </body>
 </html>
