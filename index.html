@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RespectRez Devs Update</title>
 <style>
-    /* ستايل عام */
     @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
     body {
         margin: 0;
         font-family: 'Cairo', sans-serif;
         background: #0f0f0f;
         color: #f0f0f0;
+        overflow-x: hidden;
     }
     header {
         background: linear-gradient(90deg, #1a1a1a, #111);
@@ -22,7 +22,12 @@
     header h1 {
         font-size: 2.5em;
         color: #ff3d00;
-        text-shadow: 0 0 10px #ff3d00;
+        text-shadow: 0 0 20px #ff3d00, 0 0 40px #ff6b33;
+        animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+        from { text-shadow: 0 0 10px #ff3d00, 0 0 20px #ff6b33; }
+        to { text-shadow: 0 0 30px #ff3d00, 0 0 60px #ff6b33; }
     }
     main {
         display: flex;
@@ -38,23 +43,47 @@
         padding: 40px;
         border-radius: 15px;
         max-width: 600px;
-        box-shadow: 0 0 20px rgba(255, 61, 0, 0.6);
+        box-shadow: 0 0 30px rgba(255, 61, 0, 0.8);
+        animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+        0% { box-shadow: 0 0 20px rgba(255,61,0,0.6); }
+        50% { box-shadow: 0 0 40px rgba(255,61,0,1); }
+        100% { box-shadow: 0 0 20px rgba(255,61,0,0.6); }
     }
     .update-box h2 {
         color: #ff3d00;
         font-size: 2em;
         margin-bottom: 20px;
+        animation: textPulse 1.5s infinite alternate;
+    }
+    @keyframes textPulse {
+        from { color: #ff3d00; }
+        to { color: #ff6b33; }
     }
     .update-box p {
         font-size: 1.2em;
         line-height: 1.6;
         color: #f0f0f0;
+        animation: fadeIn 3s ease-in-out infinite alternate;
+    }
+    @keyframes fadeIn {
+        0% { opacity: 0.8; }
+        50% { opacity: 1; }
+        100% { opacity: 0.8; }
     }
     .timer {
         margin-top: 30px;
-        font-size: 1.5em;
+        font-size: 1.8em;
         color: #00eaff;
         font-weight: bold;
+        text-shadow: 0 0 10px #00eaff;
+        animation: timerGlow 1.5s infinite alternate;
+    }
+    @keyframes timerGlow {
+        0% { text-shadow: 0 0 5px #00eaff; }
+        50% { text-shadow: 0 0 20px #00eaff; }
+        100% { text-shadow: 0 0 5px #00eaff; }
     }
     footer {
         margin-top: 50px;
@@ -72,7 +101,7 @@
 <main>
     <div class="update-box">
         <h2>تحديث جديد قادم!</h2>
-        <p>السلام عليكم، آخر تحديث للموقع سيتم إصداره خلال 48 ساعة. المالك <strong>Wael</strong> هو صاحب هذا التحديث (Mol Top Update).</p>
+        <p>السلام عليكم، آخر تحديث للموقع سيتم إصداره خلال 48 ساعة. المالك <strong>Wael</strong> هو صاحب هذا التحديث .</p>
         <p>نحن نعمل على تحسين الموقع وإضافة مميزات جديدة لتجربة أفضل لجميع المستخدمين.</p>
         <div class="timer" id="countdown">48:00:00</div>
     </div>
@@ -82,25 +111,18 @@
 </footer>
 
 <script>
-// عدّاد تنازلي 48 ساعة
 let countdownDate = new Date().getTime() + 48*60*60*1000;
-
 let x = setInterval(function() {
     let now = new Date().getTime();
     let distance = countdownDate - now;
-
-    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000*60*60));
+    let hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
     let minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
     let seconds = Math.floor((distance % (1000*60)) / 1000);
-
     document.getElementById("countdown").innerHTML = 
-        ("0" + hours).slice(-2) + ":" + 
-        ("0" + minutes).slice(-2) + ":" + 
-        ("0" + seconds).slice(-2);
-
-    if (distance < 0) {
+        ("0"+hours).slice(-2)+":"+("0"+minutes).slice(-2)+":"+("0"+seconds).slice(-2);
+    if(distance < 0){
         clearInterval(x);
-        document.getElementById("countdown").innerHTML = "تم التحديث!";
+        document.getElementById("countdown").innerHTML = "HAS BEEN UPDATED ";
     }
 }, 1000);
 </script>
