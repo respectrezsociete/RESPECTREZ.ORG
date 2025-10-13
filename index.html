@@ -1,288 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RESPECTREZ® – Cyber Security | Marketing | Gaming</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap');
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RespectRez Devs Update</title>
+<style>
+    /* ستايل عام */
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
     body {
-      background: radial-gradient(circle at top, #050505, #000);
-      font-family: 'Poppins', sans-serif;
-      color: #fff;
-      overflow-x: hidden;
+        margin: 0;
+        font-family: 'Cairo', sans-serif;
+        background: #0f0f0f;
+        color: #f0f0f0;
     }
-
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 60px;
-      border-bottom: 1px solid #111;
-      background: rgba(0,0,0,0.8);
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      backdrop-filter: blur(6px);
+        background: linear-gradient(90deg, #1a1a1a, #111);
+        padding: 20px;
+        text-align: center;
+        border-bottom: 2px solid #ff3d00;
     }
-
-    header img {
-      height: 60px;
+    header h1 {
+        font-size: 2.5em;
+        color: #ff3d00;
+        text-shadow: 0 0 10px #ff3d00;
     }
-
-    nav a {
-      color: #0ff;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #fff;
-      text-shadow: 0 0 10px #0ff;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 120px 20px;
-      background: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
-    }
-
-    .hero h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 3.5em;
-      color: #0ff;
-      text-shadow: 0 0 25px #0ff;
-      letter-spacing: 3px;
-      animation: glow 3s infinite alternate;
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 20px #0ff; }
-      to { text-shadow: 0 0 40px #0ff, 0 0 60px #00f0ff; }
-    }
-
-    .hero p {
-      margin-top: 15px;
-      font-size: 1.2em;
-      color: #ccc;
-    }
-
-    section {
-      padding: 100px 60px;
-      text-align: center;
-    }
-
-    h2 {
-      font-family: 'Orbitron', sans-serif;
-      color: #0ff;
-      text-shadow: 0 0 20px #0ff;
-      margin-bottom: 20px;
-      font-size: 2.2em;
-    }
-
-    .content {
-      max-width: 800px;
-      margin: auto;
-      color: #bbb;
-      line-height: 1.8em;
-      font-size: 1.05em;
-    }
-
-    .stats {
-      display: flex;
-      justify-content: center;
-      gap: 50px;
-      margin-top: 40px;
-    }
-
-    .stat {
-      font-size: 2em;
-      color: #0ff;
-      font-weight: bold;
-      text-shadow: 0 0 15px #0ff;
-    }
-
-    .divisions {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .card {
-      background: rgba(0,0,0,0.7);
-      border: 1px solid #0ff3;
-      border-radius: 15px;
-      padding: 30px;
-      width: 280px;
-      box-shadow: 0 0 20px #0ff2;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 40px #0ff5;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      background: #010101;
-      border-top: 1px solid #111;
-      font-size: 0.9em;
-      color: #888;
-    }
-
-    footer span {
-      color: #0ff;
-    }
-
-    button {
-      background: #0ff;
-      color: #000;
-      border: none;
-      padding: 12px 25px;
-      border-radius: 8px;
-      font-weight: bold;
-      font-family: 'Poppins';
-      cursor: pointer;
-      margin-top: 20px;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background: #fff;
-      color: #000;
-      box-shadow: 0 0 20px #0ff;
-    }
-
-    @media (max-width: 768px) {
-      header {
+    main {
+        display: flex;
         flex-direction: column;
-      }
-      nav {
-        margin-top: 10px;
-      }
-      .divisions {
-        flex-direction: column;
+        justify-content: center;
         align-items: center;
-      }
+        padding: 50px 20px;
+        text-align: center;
     }
-  </style>
+    .update-box {
+        background: #1b1b1b;
+        border: 2px solid #ff3d00;
+        padding: 40px;
+        border-radius: 15px;
+        max-width: 600px;
+        box-shadow: 0 0 20px rgba(255, 61, 0, 0.6);
+    }
+    .update-box h2 {
+        color: #ff3d00;
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+    .update-box p {
+        font-size: 1.2em;
+        line-height: 1.6;
+        color: #f0f0f0;
+    }
+    .timer {
+        margin-top: 30px;
+        font-size: 1.5em;
+        color: #00eaff;
+        font-weight: bold;
+    }
+    footer {
+        margin-top: 50px;
+        padding: 20px;
+        text-align: center;
+        color: #888;
+        border-top: 1px solid #333;
+    }
+</style>
 </head>
 <body>
-  <header>
-    <img src="respectrez-logo.png" alt="RESPECTREZ Logo">
-    <nav>
-      <a href="#about">About</a>
-      <a href="#divisions">Divisions</a>
-      <a href="#team">Team</a>
-      <a href="#updates">Updates</a>
-      <a href="#join">Join Us</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <div class="hero">
-    <h1>RESPECTREZ®</h1>
-    <p>Empowering the Future of Marketing, Cyber Security & Gaming</p>
-  </div>
-
-  <section id="about">
-    <h2>About Us</h2>
-    <div class="content">
-      RESPECTREZ® is a next-generation company combining digital marketing, cyber defense, and gaming innovation. 
-      Founded by <strong>Wael</strong> in 2025, the company has quickly grown into a network of over 103,500 members worldwide.
-      <br><br>
-      Our vision is to merge technology, creativity, and protection into one ecosystem — providing secure digital experiences for everyone.
+<header>
+    <h1>RespectRez Devs</h1>
+</header>
+<main>
+    <div class="update-box">
+        <h2>تحديث جديد قادم!</h2>
+        <p>السلام عليكم، آخر تحديث للموقع سيتم إصداره خلال 48 ساعة. المالك <strong>Wael</strong> هو صاحب هذا التحديث (Mol Top Update).</p>
+        <p>نحن نعمل على تحسين الموقع وإضافة مميزات جديدة لتجربة أفضل لجميع المستخدمين.</p>
+        <div class="timer" id="countdown">48:00:00</div>
     </div>
+</main>
+<footer>
+    © 2025 RespectRez Devs - جميع الحقوق محفوظة
+</footer>
 
-    <div class="stats">
-      <div class="stat" id="members">0</div>
-      <div>Active Members</div>
-    </div>
-  </section>
+<script>
+// عدّاد تنازلي 48 ساعة
+let countdownDate = new Date().getTime() + 48*60*60*1000;
 
-  <section id="divisions">
-    <h2>Our Divisions</h2>
-    <div class="divisions">
-      <div class="card">
-        <h3>Marketing</h3>
-        <p>We craft digital strategies, social presence, and visual branding that convert audiences into loyal communities.</p>
-      </div>
-      <div class="card">
-        <h3>Cyber Security</h3>
-        <p>From ethical hacking simulations to advanced defense systems, RESPECTREZ® protects digital infrastructures worldwide.</p>
-      </div>
-      <div class="card">
-        <h3>Gaming</h3>
-        <p>Creating competitive spaces, esports events, and advanced gaming security for the future of entertainment.</p>
-      </div>
-    </div>
-  </section>
+let x = setInterval(function() {
+    let now = new Date().getTime();
+    let distance = countdownDate - now;
 
-  <section id="team">
-    <h2>Our Team</h2>
-    <div class="content">
-      <strong>Founder:</strong> Wael<br>
-      <strong>Co-Owner:</strong> Role open for high-level executives<br><br>
-      Our leadership drives innovation, collaboration, and respect. Together we move digital culture forward.
-    </div>
-  </section>
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000*60*60));
+    let minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+    let seconds = Math.floor((distance % (1000*60)) / 1000);
 
-  <section id="updates">
-    <h2>Latest Update</h2>
-    <div class="content">
-      <strong>REZSEC PHOE Update</strong><br>
-      The largest and most advanced security & gaming fusion system ever created by RESPECTREZ®.
-      Enhanced protection layers, AI monitoring, and integration with our marketing analytics.
-      <br><br>
-      <button>Download REZSEC PHOE Update</button>
-    </div>
-  </section>
+    document.getElementById("countdown").innerHTML = 
+        ("0" + hours).slice(-2) + ":" + 
+        ("0" + minutes).slice(-2) + ":" + 
+        ("0" + seconds).slice(-2);
 
-  <section id="join">
-    <h2>Join Our Network</h2>
-    <div class="content">
-      Become part of one of the fastest-growing communities in the digital world.
-      <br>
-      Join developers, marketers, cybersecurity experts, and gamers who shape the future together.
-      <br><br>
-      <button>Apply Now</button>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="content">
-      Email: contact@respectrez.com<br>
-      LinkedIn: RESPECTREZ Official<br>
-      Discord: RESPECTREZ Network
-    </div>
-  </section>
-
-  <footer>
-    Developed & Designed by <span>Owner Wael</span> © 2025 – RESPECTREZ®
-  </footer>
-
-  <script>
-    let count = 0;
-    const members = document.getElementById('members');
-    const interval = setInterval(() => {
-      count += 1035;
-      members.textContent = count.toLocaleString();
-      if (count >= 103500) clearInterval(interval);
-    }, 30);
-  </script>
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "تم التحديث!";
+    }
+}, 1000);
+</script>
 </body>
 </html>
